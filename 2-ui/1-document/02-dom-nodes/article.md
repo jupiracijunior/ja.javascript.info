@@ -4,17 +4,17 @@ libs:
 
 ---
 
-# DOM ツリー
+# Árvore DOM
 
-HTMLドキュメントのバックボーンはタグです。
+A espinha dorçal do HTML são as tags.
 
-ドキュメントオブジェクトモデル(DOM)によれば、すべてのHTMLタグはオブジェクトです。入れ子のタグはそれを囲った "子" と呼ばれます。タグの内側のテキストも同様にオブジェクトです。
+De acordo com o Document Object Model (DOM), todas as tags HTML são objetos. Uma tag aninhada é chamada de "filha". Textos dentro de tags também são objetos.
 
-これらすべてのオブジェクトは JavaScript でアクセス可能であり、これらを使用してページが変更できます。
+É possível acessar todos esses objetos com JavaScript, e ao usá-los é possível modificar a página.
 
-例えば、`document.body` は `<body>` タグを表すオブジェクトです。
+Por exemplo, `document.body` é um objeto que representa a tag `<body>`.
 
-以下のコードを実行すると、3秒間 `<body>` が赤になります:
+O código abaixo, quando executado, tornará `<body>` vermelho por 3 segundos:
 
 ```js run
 document.body.style.background = 'red'; // 背景を赤に変更
@@ -22,17 +22,17 @@ document.body.style.background = 'red'; // 背景を赤に変更
 setTimeout(() => document.body.style.background = '', 3000); // 戻します
 ```
 
-ここでは、`document.body` の背景色を変更するのに、`style.background` を使用していますが、以下のようにたに多くのプロパティがあります:
+Aqui, utilizamos `style.background` para modificar a cor de fundo de `document.body`, mas também existem outras propriedades para isso:
 
-- `innerHTML` -- ノードの HTML コンテンツ
-- `offsetWidth` -- ノードの幅(ピクセル)
-- など
+- `innerHTML` -- nó de conteúdo HTML
+- `offsetWidth` -- largura do nó (em pixels)
+- entre outros...
 
-後ほど、DOMを操作するより多くの方法を学んでいきますが、最初に知っておく必要があるのは、その構造です。
+Mais tarde você aprenderá mais formas manipular o DOM, mas, para começar, é necessário conhecer essas estruras.
 
-## DOM の例 
+## Exemplos de DOM
 
-例えば、このドキュメントに対する DOM を調べてみましょう:
+Por exemplo, vamos analisando o DOM deste documento:
 
 ```html run no-beautify
 <!DOCTYPE HTML>
@@ -46,7 +46,7 @@ setTimeout(() => document.body.style.background = '', 3000); // 戻します
 </html>
 ```
 
-DOM は HTMLをタグのツリー構造として表現します。それはこのように見えます:
+DOM é a representação do HTML em uma estrutura arbória de tags. Ele se parece com isso:
 
 <div class="domtree"></div>
 
