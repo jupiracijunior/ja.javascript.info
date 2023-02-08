@@ -17,9 +17,9 @@ Por exemplo, `document.body` é um objeto que representa a tag `<body>`.
 O código abaixo, quando executado, tornará `<body>` vermelho por 3 segundos:
 
 ```js run
-document.body.style.background = 'red'; // 背景を赤に変更
+document.body.style.background = 'red'; // Altera o fundo para vermelho
 
-setTimeout(() => document.body.style.background = '', 3000); // 戻します
+setTimeout(() => document.body.style.background = '', 3000); // Volta ao normal
 ```
 
 Aqui, utilizamos `style.background` para modificar a cor de fundo de `document.body`, mas também existem outras propriedades para isso:
@@ -57,16 +57,16 @@ drawHtmlTree(node1, 'div.domtree', 690, 320);
 </script>
 
 ```online
-上の図では、要素をクリックすることで子要素を開閉できます。
+Na imagem a cima, você pode clicar em um nó para abrir ou ocultar o elemento filho.
 ```
 
-すべてのツリーノードはオブジェクトです。
+Todos os nós da árvore são objetos.
 
-タグは *"要素ノード"* (もしくは単に要素) と呼ばれ、ツリー構造を形成します: `<html>` がルートで、`<head>`, `<body>` がその子、と言った構造です。
+As tags são chamadas de "nós do elemento" (ou só elementos) e moldam a estrutura da árvore: `<html>` é a raiz, `<head>` e `<body>` são chamados de filhos dessa raiz.
 
-要素内のテキストは *テキストノード* を形成し、 `#text` とラベル付けされます。テキストノードは文字列だけを含み、子を持たず、常にツリーの葉になります。
+O texto dentro dos elementos formam nós de texto, rotulados como `#text`. Nós de texto incluem apenas Strings, não guardam filhos e sempre são as folhas da árvore.
 
-例えば、`<title>` タグはテキスト `"About elks"` を持っています。
+Por exemplo, a tag `<title>` guarda o texto `"About elks"`.
 
 テキストノード中の特別な文字に注意してください:
 
