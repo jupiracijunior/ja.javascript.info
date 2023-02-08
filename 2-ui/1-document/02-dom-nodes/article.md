@@ -28,11 +28,11 @@ Aqui, utilizamos `style.background` para modificar a cor de fundo de `document.b
 - `offsetWidth` -- largura do nó (em pixels)
 - entre outros...
 
-Mais tarde você aprenderá mais formas manipular o DOM, mas, para começar, é necessário conhecer essas estruras.
+Mais tarde você aprenderá outras formas de manipular o DOM, mas, para começar, é necessário conhecer essas estruturas.
 
 ## Exemplos de DOM
 
-Por exemplo, vamos analisando o DOM deste documento:
+Por exemplo, vamos analisar o DOM deste documento:
 
 ```html run no-beautify
 <!DOCTYPE HTML>
