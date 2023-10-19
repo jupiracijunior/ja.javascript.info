@@ -75,7 +75,7 @@ Fique atento aos caracteres especiais dentro do nó de texto:
 
 Espaços e quebras de linha são semelhantes a letras e números, pois são caracteres totalmente válidos. Eles dão forma aos nós de texto, se tornam um parte do DOM. Portanto, no exemplo acima, alguns espaços dentro da tag `<head>`, antes da tag `<title>`, se tornam nós `#text` (apenas quebras de linha e espaços estão incluídos)
 
-Existe apenas 2 exceções de nível superior:
+Existem apenas 2 exceções de nível superior:
 
 1. Por motivos históricos, os espaços e quebras de linha antes de `<head>` são desconsiderados.
 2. As especificações HTML dizem que todo o conteúdo deve estar dentro do `</body>`, sendo assim, caso coloque algo após o `</body>`, será movido automaticamente para dentro do `body`. Por isso não há espaços depois da tag `</body>`.
