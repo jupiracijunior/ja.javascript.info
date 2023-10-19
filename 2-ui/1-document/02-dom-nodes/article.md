@@ -68,28 +68,20 @@ O texto dentro dos elementos formam nós de texto, rotulados como `#text`. Nós 
 
 Por exemplo, a tag `<title>` guarda o texto `"About elks"`.
 
-テキストノード中の特別な文字に注意してください:
 Fique atento aos caracteres especiais dentro do nó de texto:
 
-- 改行: `↵` (JavaScript では `\n` として知られています)
 - Nova linha: `↵` (Em JavaScript é conhecido como `\n`)
-- スペース: `␣`
 - Espaço: `␣`
 
-スペースと改行は文字や数字と同様、完全に有効な文字です。これらはテキストノードを形成し、DOMの一部になります。従って、例えば、上の例では `<head>` タグは `<title>` の前にいくつかのスペースを含まれており、そのテキストは `#text` ノードになります(改行といくつかのスペースのみが含まれています)。
 Espaços e quebras de linha são semelhantes a letras e números, pois são caracteres totalmente válidos. Eles dão forma aos nós de texto, se tornam um parte do DOM. Portanto, no exemplo acima, alguns espaços dentro da tag `<head>`, antes da tag `<title>`, se tornam nós `#text` (apenas quebras de linha e espaços estão incluídos)
 
-そこには2つだけ、トップレベルの除外があります:
-1. `<head>` の前のスペースと改行は歴史的な理由から無視されます。
-2. HTMLスペックではすべてのコンテンツが `<body>` の内側でなければならないため、`</body>` の後に何かをおいた場合、最後にそれらは自動的に `body` の中に移動されます。従って、`</body>` の後にスペースはないことがあります。
 Existe apenas 2 exceções de nível superior:
+
 1. Por motivos históricos, os espaços e quebras de linha antes de `<head>` são desconsiderados.
 2. As especificações HTML dizem que todo o conteúdo deve estar dentro do `</body>`, sendo assim, caso coloque algo após o `</body>`, será movido automaticamente para dentro do `body`. Por isso não há espaços depois da tag `</body>`.
 
-その他のケースはすべてが明快で、ドキュメント内にスペース（単に任意の文字のように）があれば、それらはDOMのテキストノードになります。もしそれらを削除すれば、何も存在しません。
 Outro ponto é, caso hajam espaços (como um caractere aleatório) dentro do documento, todos eles, sem dúvida, se tornarão nós de texto. Se você apagá-los, dexarão de existir.
 
-これはスペースがないテキストノードです:
 Este é um nó de texto sem texto:
 
 ```html no-beautify
