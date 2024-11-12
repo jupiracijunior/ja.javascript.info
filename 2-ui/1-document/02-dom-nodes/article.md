@@ -97,21 +97,21 @@ let node2 = {"name":"HTML","nodeType":1,"children":[{"name":"HEAD","nodeType":1,
 drawHtmlTree(node2, 'div.domtree', 690, 210);
 </script>
 
-```smart header="端のスペースとその間にある空のテキストは、通常はツール内に隠されています"
-DOMを使って動作するブラウザツール（この後説明します）は、通常、テキストの最初/最後のスペースを表示せず、またタグ間に空のテキストノード（改行）も表示しません。
+```smart header="O texto vazio entre as bordas e o espaço, normalmente é oculto pela ferramenta."
+Ferramentes de navegador que funcionam com o DOM (explicarei posteriormente), geralmente, primeiro texto/último espaço não são exibidos. Dentro de uma tag, o texto vazio (novo parágrafo) também não é exibido.
 
-これは、主にHTMLを装飾するために使用され、どのように表示されるかに（ほとんどの場合）影響を与えないからです。
+Isto é feito, principalmente, para organizar o HTML e não influência na forma (na maioria dos casos) à qual será exibido.
 
-さらにDOMの図では、物事を短く保つために、それらが無関係な場所で省略することがあります。
+Além disto, no diagrama do DOM, para manter as coisas curtas, são omitidos em um local a parte.
 ```
 
-## 自動補正 
+## Corretor automático
 
-ブラウザが不正な形式のHTMLに遭遇した場合、DOM作成時に自動補正します。
+Caso o navegador encontre alguma forma ilegal no HTML, ele efetuará a correção automática durante a construção do DOM.
 
-例えば、トップのタグは常に `<html>` です。ブラウザは `<html>` を作成するので、たとえドキュメントの中になくても、DOMの中に存在することになります。`<body>` についても同じです。
+Por exemplo, a tag superior sempre será a `<html>`. O navegador constroi a `<html>`, por isto, mesmo que a tag não esteja no documento, ela passará a existir no DOM. O mesmo ocorre com a `<body>`.
 
-例として、もしHTMLファイルが `"Hello"` という言葉のみだった場合、ブラウザはそれを `<html>` と `<body>` でラップし、必須の `<head>` を追加し、DOMは次のようになります:
+Como exemplo, caso o arquivo HTML contenha apenas a palavra `"Hello"`, o navegador a envolve nas tags `<html>` e `<body>`, adiciona a essencial tag `<head>`, e o DOM termina da seguinte forma:
 
 
 <div class="domtree"></div>
@@ -122,9 +122,9 @@ let node3 = {"name":"HTML","nodeType":1,"children":[{"name":"HEAD","nodeType":1,
 drawHtmlTree(node3, 'div.domtree', 690, 150);
 </script>
 
-DOMを生成している間、ブラウザは自動的にドキュメント内のエラーを処理しタグを閉じます。
+Enquanto gera o DOM, o navegador fecha tags e lida com erros automaticamente.
 
-このような "無効な" ドキュメントの場合:
+Em casos de documentos "inválidos", como este:
 
 ```html no-beautify
 <p>Hello
@@ -133,7 +133,7 @@ DOMを生成している間、ブラウザは自動的にドキュメント内�
 <li>Dad
 ```
 
-...も、ブラウザはタグを読みかけた部分を復元し、通常のDOMになります。:
+...também. O navegador restaura a tag quando começa a ler, corrigindo o DOM em sua forma comum.:
 
 <div class="domtree"></div>
 
@@ -143,7 +143,7 @@ let node4 = {"name":"HTML","nodeType":1,"children":[{"name":"HEAD","nodeType":1,
 drawHtmlTree(node4, 'div.domtree', 690, 360);
 </script>
 
-````warn header="Tables は常に `<tbody>` を持ちます"
+````warn header="Tables sempre conterão a tag `<tbody>`"
 興味深い "特別なケース はテーブルです。DOM仕様によると、テーブルは `<tbody>` をもたなければなりませんが、HTMLテキストでは(公式に)それを省略することができます。そしてブラウザは DOM の中に自動的に `<tbody>` を生成します。
 
 次のHTML:
